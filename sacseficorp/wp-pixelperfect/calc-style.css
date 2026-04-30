@@ -1,0 +1,138 @@
+.loan-calculator-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background: #fff;
+  border: 1px solid #d9e2ef;
+  padding: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.loan-inputs h3::before {
+  content: "📝"; 
+  margin-right: 1rem;
+}
+
+.loan-results h3::before {
+  content: "📊";
+  margin-right: 1rem;
+}
+
+.loan-inputs, .loan-results {
+  flex: 1;
+  min-width: 300px;
+  border: 1px solid #cce0ff;
+  border-radius: 1rem;
+  padding: 20px;
+  background: #eff6ff;
+}
+
+.loan-inputs h3, .loan-results h3 {
+  color: #003366;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.loan-inputs label {
+  display: block;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  margin-top: 1.5rem;
+  color: #003366;
+}
+
+.loan-inputs input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #00aa66;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+}
+
+.loan-inputs small {
+  color: #999;
+  font-size: 0.8em;
+}
+
+#calculate-btn,
+.pp-calc-calculate-btn {
+  display: block;
+  width: 100%;
+  background: #003366;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 1.5rem;
+  
+}
+
+#calculate-btn:hover,
+.pp-calc-calculate-btn:hover {
+  background: #ffd100;
+  color: #003366;
+}
+
+.loan-results p {
+  margin: 8px 0;
+  color: #003366;
+}
+
+.loan-results h4 {
+  margin-top: 20px;
+  color: #003366;
+}
+
+.loan-results table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.loan-results th {
+  color: #fff;
+  padding: 8px;
+}
+
+.loan-results td {
+  border-bottom: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+thead tr{
+  background: #003366;
+  border-radius: 0.75rem;
+}
+
+.font-result{
+  font-weight:700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.large-font{
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.result-section{
+  border-radius: 0.75rem;
+  background-color: #fff;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.result-section p{
+  margin:0;
+}
+
+small {display:none;}
+
