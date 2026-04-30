@@ -67,7 +67,9 @@ function pp_card_render_shortcode($atts = array(), $content = null) {
     ob_start();
     ?>
     <div id="<?php echo esc_attr($template_id); ?>" class="pp-card-popup-template" hidden>
-        <?php echo wp_kses_post($popup_content); ?>
+        <div class="pp-card-menu-content">
+            <?php echo wp_kses_post($popup_content); ?>
+        </div>
     </div>
     <?php
 

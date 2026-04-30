@@ -12,6 +12,7 @@
         });
 
         target.innerHTML = contentHtml;
+        target.classList.add('pp-card-menu-active');
         target.style.backgroundColor = '#000D54';
         target.style.color = '#ffffff';
         target.style.padding = '14px';
@@ -32,6 +33,7 @@
             target.setAttribute('style', state.styleAttr);
         }
 
+        target.classList.remove('pp-card-menu-active');
         targetStateMap.delete(target);
     }
 
