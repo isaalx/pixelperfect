@@ -4,10 +4,11 @@ Plugin de WordPress que incluye:
 
 - Calculadora de prestamos por shortcode.
 - Card menu por shortcode enlazado a elementos existentes via `data-marker-content`.
+- Reporte de reclamos por shortcode con paneles editables desde el admin.
 
 ## Version
 
-- 1.3.2
+- 1.4.0
 
 ## Requisitos
 
@@ -53,6 +54,18 @@ Nota:
 
 - Debe existir en el DOM un elemento con el atributo `data-marker-content` que coincida exactamente con el valor enviado al shortcode.
 
+### Reporte de reclamos
+
+```text
+[reporte-reclamos]
+```
+
+Comportamiento:
+
+- Renderiza 3 paneles acordeón colapsables, cada uno con un encabezado de color configurable y 5 estadísticas: Total reclamos, En proceso, Finalizados, Tiempo de resolución y Indicador de eficiencia.
+- Los paneles comienzan colapsados y se expanden/cierran al hacer clic.
+- Los valores se gestionan desde el panel de administración: **Reportes > Reclamos**.
+
 ### Accordion style
 
 ```text
@@ -70,13 +83,21 @@ Comportamiento:
 - `wp-pixelperfect-calculator.php`: logica y shortcode de calculadora.
 - `wp-pixelperfect-card-menu.php`: logica y shortcode de card menu.
 - `wp-pixelperfect-accordion-style.php`: logica y shortcode para estilos del accordion.
+- `wp-pixelperfect-reporte-reclamos.php`: logica, shortcode y formulario de edicion del reporte de reclamos.
 - `calc-style.css`: estilos de la calculadora.
 - `calculator.js`: logica de calculadora.
 - `pp-card-custom.css`: estilos del popup del card menu.
 - `pp-card-custom.js`: logica hover/popup del card menu.
 - `pp-accordion-custom.css`: estilos personalizados para `.e-n-accordion-item`.
+- `pp-reporte-reclamos.css`: estilos de los paneles del reporte de reclamos.
 
 ## Cambios
+
+### 1.4.0
+
+- Se agrega shortcode `[reporte-reclamos]` que renderiza 3 paneles acordeón colapsables con estadísticas de reclamos.
+- Se agrega menú de administración **Reportes** con submenú **Reclamos** para editar el título (mes/año), color de encabezado y los 5 valores de cada panel.
+- Se agregan archivos `wp-pixelperfect-reporte-reclamos.php` y `pp-reporte-reclamos.css`.
 
 ### 1.3.2
 
