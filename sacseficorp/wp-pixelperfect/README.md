@@ -7,7 +7,7 @@ Plugin de WordPress que incluye:
 
 ## Version
 
-- 1.3.1
+- 1.3.2
 
 ## Requisitos
 
@@ -64,6 +64,11 @@ Nota:
 - `pp-card-custom.js`: logica hover/popup del card menu.
 
 ## Cambios
+
+### 1.3.2
+
+- Calculadora: el campo de plazo cambia de años a meses (`data-field="months"`), permitiendo ingresar directamente el numero de meses del prestamo.
+- Calculadora: se agrega nota al pie `* Pago mensual no incluye seguros.` debajo de la tabla de amortizacion.
 
 ### 1.3.1
 
