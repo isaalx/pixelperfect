@@ -51,8 +51,8 @@ function pp_calc_render_shortcode($atts = array(), $content = null) {
           <input type="number" data-field="rate" placeholder="Ej. 13" min="0" step="0.01" />
           <small>Numero valido</small>
 
-          <label>Plazo (anos)</label>
-          <input type="number" data-field="years" placeholder="Ej. 20" min="1" />
+          <label>Plazo (meses)</label>
+          <input type="number" data-field="months" placeholder="Ej. 36" min="1" />
           <small>Numero valido</small>
 
           <button type="button" data-action="calculate" class="pp-calc-calculate-btn">Calcular</button>
@@ -90,6 +90,7 @@ function pp_calc_render_shortcode($atts = array(), $content = null) {
             <tr><td colspan="5">-</td></tr>
           </tbody>
         </table>
+        <p>* Pago mensual no incluye seguros.</p>
       </div>
     </div>
     <?php

@@ -10,29 +10,28 @@
 	  function initCalculator(container) {
 	    const amountInput = findInContainer(container, '[data-field="amount"]', '#amount');
 	    const rateInput = findInContainer(container, '[data-field="rate"]', '#rate');
-	    const yearsInput = findInContainer(container, '[data-field="years"]', '#years');
+	    const monthsInput = findInContainer(container, '[data-field="months"]', '#months');
 	    const calculateBtn = findInContainer(container, '[data-action="calculate"]', '#calculate-btn');
 	    const monthlyPaymentEl = findInContainer(container, '[data-output="monthly-payment"]', '#monthly-payment');
 	    const totalInterestEl = findInContainer(container, '[data-output="total-interest"]', '#total-interest');
 	    const totalPaymentEl = findInContainer(container, '[data-output="total-payment"]', '#total-payment');
 	    const tableBody = findInContainer(container, '[data-table="amortization"] tbody', '#amortization-table tbody');
 
-	    if (!amountInput || !rateInput || !yearsInput || !calculateBtn || !monthlyPaymentEl || !totalInterestEl || !totalPaymentEl || !tableBody) {
+	    if (!amountInput || !rateInput || !monthsInput || !calculateBtn || !monthlyPaymentEl || !totalInterestEl || !totalPaymentEl || !tableBody) {
 	      return;
 	    }
 
 	    calculateBtn.addEventListener('click', function() {
 	      const principal = parseFloat(amountInput.value);
 	      const annualRateRaw = parseFloat(rateInput.value);
-	      const years = parseInt(yearsInput.value, 10);
+      const months = parseInt(monthsInput.value, 10);
 
-	      if (isNaN(principal) || isNaN(annualRateRaw) || isNaN(years) || principal <= 0 || annualRateRaw < 0 || years <= 0) {
-	        alert('Por favor ingresa valores válidos.');
-	        return;
-	      }
+      if (isNaN(principal) || isNaN(annualRateRaw) || isNaN(months) || principal <= 0 || annualRateRaw < 0 || months <= 0) {
+        alert('Por favor ingresa valores válidos.');
+        return;
+      }
 
-	      const annualRate = annualRateRaw / 100;
-	      const months = years * 12;
+      const annualRate = annualRateRaw / 100;
 	      const monthlyRate = annualRate / 12;
 
 	      let monthlyPayment;
