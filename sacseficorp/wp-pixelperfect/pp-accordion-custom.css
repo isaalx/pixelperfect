@@ -39,3 +39,11 @@
 .e-n-accordion-item .elementor-widget-container table thead tr {
   font-weight: bold;
 }
+
+.e-n-accordion-item .elementor-widget-container {
+  padding: 20px !important;
+}
+
+.e-n-accordion-item .elementor-widget-container p {
+  margin: 15px 20px !important;
+}
