@@ -1,0 +1,31 @@
+.e-n-accordion-item .e-n-accordion-item-title {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid #DDDCE0;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.05);
+}
+
+.e-n-accordion-item .e-n-accordion-item-title-text {
+  color: #000D54;
+  font-size: 1.3rem !important;
+  font-weight: bold;
+  font-family: 'Poppins';
+}
+
+.e-n-accordion-item .e-n-accordion-item-title-icon::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/svg+xml,%3Csvg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M16 7L10 13L4 7" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.e-n-accordion-item .e-n-accordion-item-title-icon .e-closed,
+.e-n-accordion-item .e-n-accordion-item-title-icon .e-opened {
+  display: none;
+}

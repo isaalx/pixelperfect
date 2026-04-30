@@ -53,15 +53,28 @@ Nota:
 
 - Debe existir en el DOM un elemento con el atributo `data-marker-content` que coincida exactamente con el valor enviado al shortcode.
 
+### Accordion style
+
+```text
+[wp-pixelperfect-accordion-style]
+```
+
+Comportamiento:
+
+- Encola el archivo `pp-accordion-custom.css` para aplicar estilos personalizados a la clase `.e-n-accordion-item`.
+- Si se usa como shortcode envolvente, renderiza tambien el contenido interno.
+
 ## Estructura de archivos
 
 - `wp-pixelperfect.php`: archivo principal del plugin (version y metadata), carga los modulos.
 - `wp-pixelperfect-calculator.php`: logica y shortcode de calculadora.
 - `wp-pixelperfect-card-menu.php`: logica y shortcode de card menu.
+- `wp-pixelperfect-accordion-style.php`: logica y shortcode para estilos del accordion.
 - `calc-style.css`: estilos de la calculadora.
 - `calculator.js`: logica de calculadora.
 - `pp-card-custom.css`: estilos del popup del card menu.
 - `pp-card-custom.js`: logica hover/popup del card menu.
+- `pp-accordion-custom.css`: estilos personalizados para `.e-n-accordion-item`.
 
 ## Cambios
 
