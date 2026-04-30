@@ -60,9 +60,17 @@ Puedes modificar:
 - Si no carga estilos o scripts, revisa permisos de archivos y ruta del plugin.
 - Si usas cache, limpia cache de plugin/CDN/navegador despues de cambios.
 
+## Cambios
+
+### 1.1.0
+
+- Se corrige la carga de CSS/JS dentro del editor de Elementor y en la vista previa.
+- Los assets ahora se registran en `init` para que esten disponibles en frontend y editor.
+- Se mantiene la carga de assets cuando el shortcode se renderiza.
+
 ## Version
 
-- 1.0.0
+- 1.1.0
 
 ## Licencia
 

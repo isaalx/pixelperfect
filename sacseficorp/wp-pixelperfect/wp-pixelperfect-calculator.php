@@ -2,7 +2,7 @@
 /**
  * Plugin Name: PixelPerfect Loan Calculator
  * Description: Calculadora de prestamos con shortcode para WordPress.
- * Version: 1.0.0
+ * Version: 1.1.0
  * Author: PixelPerfect
  */
 
@@ -17,18 +17,27 @@ function pp_calc_register_assets() {
         'pp-calc-style',
         $plugin_url . 'calc-style.css',
         array(),
-        '1.0.0'
+      '1.1.0'
     );
 
     wp_register_script(
         'pp-calc-script',
         $plugin_url . 'calculator.js',
         array(),
-        '1.0.0',
+      '1.1.0',
         true
     );
 }
-add_action('wp_enqueue_scripts', 'pp_calc_register_assets');
+    add_action('init', 'pp_calc_register_assets');
+
+    function pp_calc_enqueue_editor_assets() {
+      wp_enqueue_style('pp-calc-style');
+      wp_enqueue_script('pp-calc-script');
+    }
+    add_action('elementor/editor/before_enqueue_styles', 'pp_calc_enqueue_editor_assets');
+    add_action('elementor/editor/before_enqueue_scripts', 'pp_calc_enqueue_editor_assets');
+    add_action('elementor/preview/enqueue_styles', 'pp_calc_enqueue_editor_assets');
+    add_action('elementor/preview/enqueue_scripts', 'pp_calc_enqueue_editor_assets');
 
 function pp_calc_render_shortcode($atts = array(), $content = null) {
     wp_enqueue_style('pp-calc-style');
