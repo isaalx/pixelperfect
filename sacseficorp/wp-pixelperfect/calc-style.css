@@ -7,21 +7,21 @@
   font-family: 'Segoe UI', sans-serif;
 }
 
-.loan-inputs h3::before {
+.loan-calculator-container .loan-inputs h3::before {
   content: "📝";
   margin-right: 1rem;
 }
 
-.loan-results h3::before {
+.loan-calculator-container .loan-results h3::before {
   content: "📊";
   margin-right: 1rem;
 }
 
-.loan-inputs {
+.loan-calculator-container .loan-inputs {
   max-width: 400px;
 }
 
-.loan-inputs, .loan-results {
+.loan-calculator-container .loan-inputs, .loan-calculator-container .loan-results {
   flex: 1;
   min-width: 300px;
   border: 1px solid #DDDCE0;
@@ -31,7 +31,7 @@
   box-shadow: 0 4px 40px rgba(0, 0, 0, 0.05);
 }
 
-.loan-inputs h3, .loan-results h3 {
+.loan-calculator-container .loan-inputs h3, .loan-calculator-container .loan-results h3 {
   color: #3F3E5E;
   margin-bottom: 1rem;
   margin-top: 0;
@@ -41,13 +41,13 @@
   font-family: 'Poppins';
 }
 
-.loan-inputs p, .loan-results p {
+.loan-calculator-container .loan-inputs p, .loan-calculator-container .loan-results p {
   color: #000D54;
   font-size: 1rem;
   line-height: 1.5rem;
 }
 
-.pp-loan-form {
+.loan-calculator-container .pp-loan-form {
   border: 1px solid #DDDCE0;
   border-radius: 1rem;
   padding: 20px;
@@ -55,7 +55,7 @@
   box-shadow: 0 4px 40px rgba(0, 0, 0, 0.05);
 }
 
-.loan-inputs label {
+.loan-calculator-container .loan-inputs label {
   display: block;
   font-size: 1rem;
   line-height: 1.75rem;
@@ -63,7 +63,7 @@
   color: #3F3E5E;
 }
 
-.loan-inputs input {
+.loan-calculator-container .loan-inputs input {
   width: 100%;
   padding: 1rem;
   border: 1px solid #DDDCE0;
@@ -73,32 +73,13 @@
   font-weight: bold;
 }
 
-/**
-.loan-inputs .input-symbol-dollar {
-  position: relative;
-}
-
-.loan-inputs .input-symbol-dollar input {
-    padding-left: 1rem;
-}
-
-.loan-inputs .input-symbol-dollar:before {
-    position: absolute;
-    top: 0;
-    content:"$";
-    left: 0.5rem;
-    font-weight: bold;
-    color: #0052CC;
-}
-**/
-
-.loan-inputs small {
+.loan-calculator-container .loan-inputs small {
   color: #999;
   font-size: 0.8em;
 }
 
-#calculate-btn,
-.pp-calc-calculate-btn {
+.loan-calculator-container #calculate-btn,
+.loan-calculator-container .pp-calc-calculate-btn {
   display: block;
   width: 100%;
   background: #0052CC;
@@ -113,42 +94,42 @@
   font-size: 1.5rem;
 }
 
-#calculate-btn:hover,
-.pp-calc-calculate-btn:hover {
+.loan-calculator-container #calculate-btn:hover,
+.loan-calculator-container .pp-calc-calculate-btn:hover {
   background: #ffd100;
   color: #3F3E5E;
 }
 
-.loan-results p {
+.loan-calculator-container .loan-results p {
   margin: 8px 0;
 }
 
-.loan-results h4 {
+.loan-calculator-container .loan-results h4 {
   margin-top: 20px;
   color: #000D54;
 }
 
-.loan-results table {
+.loan-calculator-container .loan-results table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 10px;
 }
 
-.loan-results th {
+.loan-calculator-container .loan-results th {
   color: #fff;
   padding: 8px;
   font-weight: 400;
 }
 
-.loan-results th:first-child {
+.loan-calculator-container .loan-results th:first-child {
   border-top-left-radius: 0.75rem;
 }
 
-.loan-results th:last-child {
+.loan-calculator-container .loan-results th:last-child {
   border-top-right-radius: 0.75rem;
 }
 
-.loan-results td {
+.loan-calculator-container .loan-results td {
   border-bottom: 1px solid #ccc;
   padding: 8px;
   text-align: center;
@@ -156,26 +137,26 @@
   font-size: 1rem;
 }
 
-tbody tr:nth-child(even) {
+.loan-calculator-container .loan-results tbody tr:nth-child(even) {
   background: #f9f9f9;
 }
 
-thead tr{
+.loan-calculator-container .loan-results thead tr{
   background: #000D54;
 }
 
-.font-result{
+.loan-calculator-container .loan-results .font-result{
   font-weight:700;
   font-size: 1.5rem;
   line-height: 2rem;
 }
 
-.large-font{
+.loan-calculator-container .loan-results .large-font{
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
-.result-section{
+.loan-calculator-container .loan-results .result-section{
   text-align: center;
   border: 1px solid #DDDCE0;
   background-color: #fff;
@@ -186,9 +167,8 @@ thead tr{
   box-shadow: 0 4px 40px rgba(0, 0, 0, 0.05);
 }
 
-.result-section p{
+.loan-calculator-container .loan-results .result-section p{
   margin:0;
 }
 
-small {display:none;}
-
+.loan-calculator-container .loan-results small {display:none;}

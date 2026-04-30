@@ -7,7 +7,7 @@ Plugin de WordPress que incluye:
 
 ## Version
 
-- 1.3.0
+- 1.3.1
 
 ## Requisitos
 
@@ -64,6 +64,11 @@ Nota:
 - `pp-card-custom.js`: logica hover/popup del card menu.
 
 ## Cambios
+
+### 1.3.1
+
+- Calculadora: se encapsulan los estilos con el selector padre `.loan-calculator-container` para evitar colisiones de estilos globales en el sitio.
+- Calculadora: se elimina el contenedor `<span class="input-symbol-dollar">` alrededor del campo de monto en el shortcode y en `index.html`, simplificando el marcado del input.
 
 ### 1.3.0
 
