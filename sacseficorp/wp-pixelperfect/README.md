@@ -1,15 +1,13 @@
-# PixelPerfect Loan Calculator
+# PixelPerfect
 
-Plugin de WordPress que agrega una calculadora de prestamos con tabla de amortizacion (primeros 12 meses) mediante shortcode.
+Plugin de WordPress que incluye:
 
-## Caracteristicas
+- Calculadora de prestamos por shortcode.
+- Card menu por shortcode enlazado a elementos existentes via `data-marker-content`.
 
-- Calcula pago mensual.
-- Calcula total de intereses.
-- Calcula total a pagar.
-- Genera tabla de amortizacion de los primeros 12 meses.
-- Soporta multiples instancias del shortcode en la misma pagina.
-- Carga CSS y JavaScript solo cuando se renderiza el shortcode.
+## Version
+
+- 1.2.0
 
 ## Requisitos
 
@@ -19,58 +17,58 @@ Plugin de WordPress que agrega una calculadora de prestamos con tabla de amortiz
 ## Instalacion
 
 1. Copia la carpeta del plugin dentro de `wp-content/plugins/`.
-2. Verifica que el archivo principal sea `wp-pixelperfect-calculator.php`.
-3. En el panel de WordPress, ve a **Plugins** y activa **PixelPerfect Loan Calculator**.
+2. Verifica que el archivo principal sea `wp-pixelperfect.php`.
+3. En el panel de WordPress, ve a **Plugins** y activa **PixelPerfect**.
 
-## Uso
+## Shortcodes
 
-Inserta este shortcode en cualquier pagina o entrada:
+### Calculadora
 
 ```text
 [pixelperfect_calculadora]
 ```
 
-Al publicarse, se mostrara la calculadora con sus campos de entrada, resultados y tabla de amortizacion.
+Renderiza la calculadora con resultados y tabla de amortizacion de los primeros 12 meses.
+
+### Card menu
+
+```text
+[wp-pixelperfect-card-menu data-marker-content="tasas-comisiones-pp"]
+	<p>Contenido del popup</p>
+[/wp-pixelperfect-card-menu]
+```
+
+Comportamiento:
+
+- El shortcode no renderiza nada visible por defecto.
+- El shortcode registra una plantilla oculta con el contenido interno.
+- Se genera un selector dinamico con el parametro recibido, por ejemplo: `[data-marker-content="tasas-comisiones-pp"]`.
+- El JS se configura con `wp_add_inline_script(..., 'before')` para inyectar ese selector antes de cargar `pp-card-custom.js`.
+- Cuando el usuario hace hover sobre un elemento existente en la pagina que coincida con ese selector, se muestra un popup flotante con el contenido del shortcode y fondo `#000D54`.
+
+Nota:
+
+- Debe existir en el DOM un elemento con el atributo `data-marker-content` que coincida exactamente con el valor enviado al shortcode.
 
 ## Estructura de archivos
 
-- `wp-pixelperfect-calculator.php`: archivo principal del plugin, registra assets y shortcode.
-- `calculator.js`: logica de calculo y render de resultados/tabla.
-- `calc-style.css`: estilos visuales de la calculadora.
-- `index.html`: maqueta original de referencia.
-
-## Funcionamiento tecnico
-
-- El shortcode se registra con `add_shortcode('pixelperfect_calculadora', ...)`.
-- Los assets se registran con `wp_register_style` y `wp_register_script`.
-- Los assets se encolan dentro del render del shortcode con `wp_enqueue_style` y `wp_enqueue_script`.
-- La logica JavaScript inicializa cada bloque `.loan-calculator-container` para evitar conflictos entre instancias.
-
-## Personalizacion
-
-Puedes modificar:
-
-- Textos del formulario y resultados en `wp-pixelperfect-calculator.php`.
-- Colores, tipografia y espaciados en `calc-style.css`.
-- Formula y formato de moneda en `calculator.js`.
-
-## Solucion de problemas
-
-- Si no se muestra la calculadora, valida que el plugin este activado.
-- Si no carga estilos o scripts, revisa permisos de archivos y ruta del plugin.
-- Si usas cache, limpia cache de plugin/CDN/navegador despues de cambios.
+- `wp-pixelperfect.php`: archivo principal del plugin (version y metadata), carga los modulos.
+- `wp-pixelperfect-calculator.php`: logica y shortcode de calculadora.
+- `wp-pixelperfect-card-menu.php`: logica y shortcode de card menu.
+- `calc-style.css`: estilos de la calculadora.
+- `calculator.js`: logica de calculadora.
+- `pp-card-custom.css`: estilos del popup del card menu.
+- `pp-card-custom.js`: logica hover/popup del card menu.
 
 ## Cambios
 
-### 1.1.0
+### 1.2.0
 
-- Se corrige la carga de CSS/JS dentro del editor de Elementor y en la vista previa.
-- Los assets ahora se registran en `init` para que esten disponibles en frontend y editor.
-- Se mantiene la carga de assets cuando el shortcode se renderiza.
-
-## Version
-
-- 1.1.0
+- Se unifica el plugin con un unico archivo principal: `wp-pixelperfect.php`.
+- Se agrega shortcode `wp-pixelperfect-card-menu`.
+- Se agregan assets `pp-card-custom.css` y `pp-card-custom.js`.
+- Se implementa configuracion por `data-marker-content` con script inline antes del JS principal.
+- Autor actualizado a `PixelPerfect, Isaac Gómez`.
 
 ## Licencia
 
