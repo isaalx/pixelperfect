@@ -3,8 +3,7 @@
   flex-direction: row-reverse;
   flex-wrap: wrap;
   justify-content: space-between;
-  border-bottom: 1px solid #DDDCE0;
-  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid #DDDCE0 !important;
 }
 
 .e-n-accordion-item .e-n-accordion-item-title-text {
@@ -27,5 +26,16 @@
 
 .e-n-accordion-item .e-n-accordion-item-title-icon .e-closed,
 .e-n-accordion-item .e-n-accordion-item-title-icon .e-opened {
-  display: none;
+  display: none !important;
+}
+
+.e-n-accordion-item .elementor-widget-container table thead tr,
+.e-n-accordion-item .elementor-widget-container table tbody tr {
+  color: #595959;
+  font-size: 1rem !important;
+  font-family: 'Poppins';
+}
+
+.e-n-accordion-item .elementor-widget-container table thead tr {
+  font-weight: bold;
 }
