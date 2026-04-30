@@ -7,7 +7,7 @@ Plugin de WordPress que incluye:
 
 ## Version
 
-- 1.2.0
+- 1.3.0
 
 ## Requisitos
 
@@ -40,11 +40,12 @@ Renderiza la calculadora con resultados y tabla de amortizacion de los primeros 
 
 Comportamiento:
 
-- El shortcode no renderiza nada visible por defecto.
-- El shortcode registra una plantilla oculta con el contenido interno.
+- El shortcode renderiza un `<div>` oculto con el contenido interno del shortcode como plantilla.
 - Se genera un selector dinamico con el parametro recibido, por ejemplo: `[data-marker-content="tasas-comisiones-pp"]`.
-- El JS se configura con `wp_add_inline_script(..., 'before')` para inyectar ese selector antes de cargar `pp-card-custom.js`.
-- Cuando el usuario hace hover sobre un elemento existente en la pagina que coincida con ese selector, se muestra un popup flotante con el contenido del shortcode y fondo `#000D54`.
+- La configuracion se inyecta via `wp_add_inline_script(..., 'before')` como un objeto `{ selector, contentId }` empujado al array global `window.ppCardMenuConfigs`.
+- Se admiten multiples instancias del shortcode en la misma pagina.
+- Cuando el usuario hace hover sobre un elemento existente en la pagina que coincida con el selector, se reemplaza el contenido del elemento con el contenido de la plantilla, aplicando fondo `#000D54`, texto blanco y padding.
+- Al retirar el cursor, el contenido y estilos originales del elemento son restaurados.
 
 Nota:
 
@@ -61,6 +62,12 @@ Nota:
 - `pp-card-custom.js`: logica hover/popup del card menu.
 
 ## Cambios
+
+### 1.3.0
+
+- Card menu: el contenido del shortcode ahora se renderiza como una plantilla `<div>` oculta en el DOM.
+- Card menu: la configuracion se pasa como objeto `{ selector, contentId }` al array global `window.ppCardMenuConfigs`, permitiendo multiples instancias por pagina.
+- Card menu: el comportamiento de hover ahora reemplaza el contenido del elemento objetivo con el contenido de la plantilla (fondo `#000D54`, texto blanco, padding y borde redondeado) y restaura el estado original al salir.
 
 ### 1.2.0
 

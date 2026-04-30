@@ -7,9 +7,12 @@
 	<div class="loan-calculator-container">
 	  <div class="loan-inputs">
 	    <h3>Ingresa los datos</h3>
-	    <form id="loan-form">
+		<p>Utiliza nuestra calculadora para conocer una estimación de nuestros productos</p>
+	    <form class="pp-loan-form" onsubmit="return false;">
 	      <label for="amount">Monto del préstamo ($)</label>
-	      <input type="number" id="amount" placeholder="Ej. 10000" min="1">
+	      <span class="input-symbol-dollar">
+            <input type="number" data-field="amount" placeholder="Ej. 10000" min="1" />
+          </span>
 	      <small>Número válido</small>
 
 	      <label for="rate">Tasa de interés anual (%)</label>
@@ -25,8 +28,8 @@
 	  </div>
 
 	  <div class="loan-results">
-	   
 	    <h3>Resultados</h3>
+		<p>Según los datos proporcionados tu estimación es la siguiente:</p>
 	    <div class="result-section">
 	      <p class="large-font">Pago Mensual</p>
 	      <p><span id="monthly-payment" class="font-result">$0.00</span></p>
