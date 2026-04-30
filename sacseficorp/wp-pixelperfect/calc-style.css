@@ -5,7 +5,7 @@
   background: #fff;
   padding: 20px;
 }
-
+/**
 .loan-calculator-container .loan-inputs h3::before {
   content: "📝";
   margin-right: 1rem;
@@ -15,7 +15,7 @@
   content: "📊";
   margin-right: 1rem;
 }
-
+**/
 .loan-calculator-container .loan-inputs {
   max-width: 400px;
 }
