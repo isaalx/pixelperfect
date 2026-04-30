@@ -15,7 +15,7 @@
         target.classList.add('pp-card-menu-active');
         target.style.backgroundColor = '#000D54';
         target.style.color = '#ffffff';
-        target.style.padding = '14px';
+        target.style.padding = '40px';
         target.style.borderRadius = '10px';
     }
 
