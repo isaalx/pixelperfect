@@ -17,6 +17,10 @@
   margin-right: 1rem;
 }
 
+.loan-inputs {
+  max-width: 400px;
+}
+
 .loan-inputs, .loan-results {
   flex: 1;
   min-width: 300px;
@@ -33,7 +37,7 @@
   margin-top: 0;
   font-size: 1.5rem;
   line-height: 2.25rem;
-  font-weight: 400;
+  font-weight: 600;
   font-family: 'Poppins';
 }
 

@@ -34,7 +34,9 @@ Renderiza la calculadora con resultados y tabla de amortizacion de los primeros 
 
 ```text
 [wp-pixelperfect-card-menu data-marker-content="tasas-comisiones-pp"]
-	<p>Contenido del popup</p>
+	<a href="#"><label>Tasas y Comisiones<label><label></label></a>
+	<a href="#"><label>Cálculo de la tasa Efectiva/nominal</label><label></label></a>
+	<a href="/calculadora"><label>Calculadora</label><label>&gt;</label></a>
 [/wp-pixelperfect-card-menu]
 ```
 

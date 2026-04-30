@@ -2,7 +2,7 @@
 /**
  * Plugin Name: PixelPerfect
  * Description: Plugin de PixelPerfect para WordPress.
- * Version: 1.2.0
+ * Version: 1.3.0
  * Author: PixelPerfect, Isaac Gómez
  */
 
