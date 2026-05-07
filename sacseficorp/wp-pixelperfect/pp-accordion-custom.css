@@ -47,3 +47,8 @@
 .e-n-accordion-item .elementor-widget-container p {
   margin: 15px 20px !important;
 }
+
+.pp-align-left .porto-sicon-title,
+.pp-align-left .porto-sicon-header p {
+    text-align: left;
+}
