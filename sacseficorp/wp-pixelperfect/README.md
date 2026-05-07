@@ -4,11 +4,12 @@ Plugin de WordPress que incluye:
 
 - Calculadora de prestamos por shortcode.
 - Card menu por shortcode enlazado a elementos existentes via `data-marker-content`.
+- Grid menu por shortcode con tarjetas enlazadas y iconos personalizados.
 - Reporte de reclamos por shortcode con paneles editables desde el admin.
 
 ## Version
 
-- 1.4.0
+- 1.5.0
 
 ## Requisitos
 
@@ -48,6 +49,23 @@ Comportamiento:
 - La configuracion se inyecta via `wp_add_inline_script(..., 'before')` como un objeto `{ selector, contentId }` empujado al array global `window.ppCardMenuConfigs`.
 - Se admiten multiples instancias del shortcode en la misma pagina.
 - Cuando el usuario hace hover sobre un elemento existente en la pagina que coincida con el selector, se reemplaza el contenido del elemento con el contenido de la plantilla, aplicando fondo `#000D54`, texto blanco y padding.
+
+### Grid menu
+
+```text
+[wp-pixelperfect-grid-menu menu="menu_name"]
+```
+
+Rendenriza una grilla responsive de tarjetas a partir de items de un menu de WordPress.
+
+Comportamiento:
+
+- **Titulo de la tarjeta**: Se obtiene del campo "Title Attribute" del item del menu.
+- **Descripción**: Se obtiene del campo "Descripción" del item del menu.
+- **Icono**: Se obtiene de la imagen popup_bg_image del item del menu.
+- **Link**: Toda la tarjeta es clickeable y redirige a la URL del item del menu.
+- **Responsive**: Se adapta automáticamente a 3 columnas en desktop, 2 en tablet y 1 en mobile.
+- **Colores**: Cada tarjeta tiene una paleta de colores personalizada según su posición en la grilla.
 - Al retirar el cursor, el contenido y estilos originales del elemento son restaurados.
 
 Nota:
@@ -82,16 +100,27 @@ Comportamiento:
 - `wp-pixelperfect.php`: archivo principal del plugin (version y metadata), carga los modulos.
 - `wp-pixelperfect-calculator.php`: logica y shortcode de calculadora.
 - `wp-pixelperfect-card-menu.php`: logica y shortcode de card menu.
+- `wp-pixelperfect-grid-menu.php`: logica y shortcode de grid menu.
 - `wp-pixelperfect-accordion-style.php`: logica y shortcode para estilos del accordion.
 - `wp-pixelperfect-reporte-reclamos.php`: logica, shortcode y formulario de edicion del reporte de reclamos.
 - `calc-style.css`: estilos de la calculadora.
 - `calculator.js`: logica de calculadora.
 - `pp-card-custom.css`: estilos del popup del card menu.
 - `pp-card-custom.js`: logica hover/popup del card menu.
+- `pp-grid-menu-custom.css`: estilos de la grilla del grid menu.
 - `pp-accordion-custom.css`: estilos personalizados para `.e-n-accordion-item`.
 - `pp-reporte-reclamos.css`: estilos de los paneles del reporte de reclamos.
 
 ## Cambios
+
+### 1.5.0
+
+- Se agrega shortcode `[wp-pixelperfect-grid-menu menu="menu_name"]` que renderiza una grilla responsive de tarjetas a partir de items de un menú de WordPress.
+- Las tarjetas muestran: título desde Title Attribute, descripción desde el campo Description del item, e icono desde la imagen popup_bg_image.
+- Cada tarjeta es completamente clickeable y redirige a la URL del item del menu.
+- Diseño responsive: 3 columnas en desktop, 2 en tablet, 1 en mobile.
+- Se agregan paletas de colores personalizadas para cada tarjeta según su posición en la grilla.
+- Se agregan archivos `wp-pixelperfect-grid-menu.php` y `pp-grid-menu-custom.css`.
 
 ### 1.4.0
 

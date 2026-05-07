@@ -1,0 +1,202 @@
+/* PixelPerfect Grid Menu Styles */
+
+.pp-grid-menu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.pp-grid-menu-card {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 220px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background-color: #7DD4FF;
+}
+
+.pp-grid-menu-card div {
+    width: 100%;
+}
+
+.pp-grid-menu-card-top {
+    padding: 30px 24px 24px 24px;
+    background-size: 4rem;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+    background-origin: content-box;
+    height: 100%;
+}
+
+.pp-grid-menu-card-bottom {
+    color: #ffffff;
+    background-color: #37BCFF;
+    padding: 30px;
+}
+
+.pp-grid-menu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.pp-grid-menu-card:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 2px;
+}
+
+.pp-grid-menu-card-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #002A9D;
+}
+
+.pp-grid-menu-card-description {
+    position: relative;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin: 0;
+    padding-top: 8px;
+    z-index: 2;
+    color: rgba(255, 255, 255, 0.95);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pp-grid-menu-container {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+        padding: 16px;
+    }
+
+    .pp-grid-menu-card {
+        padding: 24px 20px;
+        min-height: 200px;
+    }
+
+    .pp-grid-menu-card-title {
+        font-size: 20px;
+        padding-right: 80px;
+    }
+
+    .pp-grid-menu-card-description {
+        font-size: 13px;
+    }
+
+    .pp-grid-menu-card-icon {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pp-grid-menu-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .pp-grid-menu-card {
+        padding: 20px 16px;
+        min-height: auto;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .pp-grid-menu-card-icon {
+        position: static;
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+    }
+
+    .pp-grid-menu-card-title {
+        font-size: 18px;
+        padding-right: 0;
+        order: 1;
+        flex: 1;
+    }
+
+    .pp-grid-menu-card-description {
+        display: none;
+    }
+}
+
+/* Color variants for visual variety - can be enhanced with menu metadata */
+.pp-grid-menu-card:nth-child(2) {
+    background-color: #D4F3FF;
+}
+
+.pp-grid-menu-card:nth-child(2) .pp-grid-menu-card-title {
+    color: #4CBAE4;
+}
+
+.pp-grid-menu-card:nth-child(2) .pp-grid-menu-card-bottom {
+    background-color: #4CBAE4;
+}
+
+.pp-grid-menu-card:nth-child(3) {
+    background-color: #4F63D2;
+}
+
+.pp-grid-menu-card:nth-child(3) .pp-grid-menu-card-title {
+    color: #FFFFFF;
+}
+
+.pp-grid-menu-card:nth-child(3) .pp-grid-menu-card-bottom {
+    background-color: #8699FF;
+}
+
+.pp-grid-menu-card:nth-child(4) {
+    background-color: #688BED;
+}
+
+.pp-grid-menu-card:nth-child(4) .pp-grid-menu-card-title {
+    color: #ffffff;
+}
+
+.pp-grid-menu-card:nth-child(4) .pp-grid-menu-card-bottom {
+    background-color: #2B57D4;
+}
+
+.pp-grid-menu-card:nth-child(5) {
+    background-color: #AFBBFF;
+}
+
+.pp-grid-menu-card:nth-child(5) .pp-grid-menu-card-title {
+    color: #4F69F2;
+}
+
+.pp-grid-menu-card:nth-child(5) .pp-grid-menu-card-bottom {
+    background-color: #6B81F7;
+}
+
+.pp-grid-menu-card:nth-child(6) {
+    background-color: #BFEDFF;
+}
+
+.pp-grid-menu-card:nth-child(6) .pp-grid-menu-card-title {
+    color: #19A8DF;
+}
+
+.pp-grid-menu-card:nth-child(6) .pp-grid-menu-card-bottom {
+    background-color: #92E1FF;
+}
+
+.pp-grid-menu-card:nth-child(6) .pp-grid-menu-card-description {
+    color: #000D54;
+}
