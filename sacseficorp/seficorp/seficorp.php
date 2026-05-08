@@ -276,7 +276,7 @@ function ce_display_documents() {
                 $totalFiles = count($files);
                 if ($totalFiles > 1) {
                     $file = $files[0];
-                    $output .= '<h2 class="mb-0">' . esc_html($file['name']) . '</h2>';
+                    $output .= '<h2 class="mb-0">' . esc_html(get_the_title()) . '</h2>';
 
 
                     $url  = isset($file['url']) ? $file['url'] : '';
@@ -393,7 +393,7 @@ function ce_display_documents_2() {
                 $totalFiles = count($files);
                 if ($totalFiles > 1) {
                     $file = $files[0];
-                    $output .= '<h2 class="mb-0">' . esc_html($file['name']) . '</h2>';
+                    $output .= '<h2 class="mb-0">' . esc_html(get_the_title()) . '</h2>';
 
 
                     $url  = isset($file['url']) ? $file['url'] : '';
