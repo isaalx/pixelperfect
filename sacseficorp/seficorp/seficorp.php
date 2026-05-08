@@ -145,6 +145,10 @@ function ce_files_meta_callback($post) {
 }
 
     echo '</div>';
+    echo '<p style="margin:10px 0 0;">';
+    $force_modal = get_post_meta($post->ID, '_ce_force_modal', true) === '1';
+    echo '<label><input type="checkbox" name="ce_force_modal" value="1" ' . checked($force_modal, true, false) . ' /> Forzar modal aunque solo exista 1 archivo</label>';
+    echo '</p>';
     echo '<button class="button" id="add_file_button">Agregar Otro Archivo</button>';
 }
 
@@ -166,6 +170,10 @@ function ce_files_meta_callback_2($post) {
               </div>';
     }
     echo '</div>';
+    echo '<p style="margin:10px 0 0;">';
+    $force_modal = get_post_meta($post->ID, '_ce_force_modal_2', true) === '1';
+    echo '<label><input type="checkbox" name="ce_force_modal_2" value="1" ' . checked($force_modal, true, false) . ' /> Forzar modal aunque solo exista 1 archivo</label>';
+    echo '</p>';
     echo '<button class="button" id="add_file_button_2">Agregar Otro Archivo</button>';
 }
 
@@ -198,6 +206,8 @@ function ce_save_meta_data($post_id) {
         update_post_meta($post_id, '_ce_files', $clean);
     }
 
+    $force_modal = (isset($_POST['ce_force_modal']) && $_POST['ce_force_modal'] === '1') ? '1' : '0';
+    update_post_meta($post_id, '_ce_force_modal', $force_modal);
 }
 add_action('save_post', 'ce_save_meta_data');
 
@@ -212,6 +222,9 @@ function ce_save_meta_data_2($post_id) {
     if (array_key_exists('ce_files_2', $_POST)) {
         update_post_meta($post_id, '_ce_files_2', $_POST['ce_files_2']);
     }
+
+    $force_modal = (isset($_POST['ce_force_modal_2']) && $_POST['ce_force_modal_2'] === '1') ? '1' : '0';
+    update_post_meta($post_id, '_ce_force_modal_2', $force_modal);
 }
 add_action('save_post', 'ce_save_meta_data_2');
 
@@ -260,6 +273,7 @@ function ce_display_documents() {
 
             $icon = get_post_meta(get_the_ID(), '_ce_icon', true);
             $files = get_post_meta(get_the_ID(), '_ce_files', true);
+            $force_modal = get_post_meta(get_the_ID(), '_ce_force_modal', true) === '1';
 
             $output .= '<div class="col-12 col-md-4 mt-5 mb-5">';
             $output .= '<div class="item">';
@@ -271,7 +285,7 @@ function ce_display_documents() {
             if ($files) {
                 $id = generateUniqueId(10);
                 $totalFiles = count($files);
-                if ($totalFiles > 1) {
+                if ($totalFiles > 1 || $force_modal) {
                     $file = $files[0];
                     $output .= '<h2 class="mb-0">' . esc_html(get_the_title()) . '</h2>';
 
@@ -377,6 +391,7 @@ function ce_display_documents_2() {
 
             $icon = get_post_meta(get_the_ID(), '_ce_icon_2', true);
             $files = get_post_meta(get_the_ID(), '_ce_files_2', true);
+            $force_modal = get_post_meta(get_the_ID(), '_ce_force_modal_2', true) === '1';
 
             $output .= '<div class="col-12 col-md-4 mt-5 mb-5">';
             $output .= '<div class="item">';
@@ -388,7 +403,7 @@ function ce_display_documents_2() {
             if ($files) {
                 $id = generateUniqueId(10);
                 $totalFiles = count($files);
-                if ($totalFiles > 1) {
+                if ($totalFiles > 1 || $force_modal) {
                     $file = $files[0];
                     $output .= '<h2 class="mb-0">' . esc_html(get_the_title()) . '</h2>';
 
