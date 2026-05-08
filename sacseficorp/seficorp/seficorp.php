@@ -1,14 +1,11 @@
 <?php
 /*
  * Plugin Name:       SEFICORP
- * Plugin URI:        https://gersonhernandez.net
+ * Plugin URI:        https://pixelperfectlab.com/
  * Description:       Administrador de documentos SEFICORP
- * Version:           1.0.0
- * Author:            Gerson Hernández
- * Author URI:        https://gersonhernandez.net/
+ * Version:           2.0.1
+ * Author:            Gerson Hernández, Alex Gómez
  * License:           GPL v2 or later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Update URI:        https://example.com/my-plugin/
  * Text Domain:       seficorp
  */
 
