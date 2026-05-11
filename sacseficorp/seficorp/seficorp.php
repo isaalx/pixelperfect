@@ -3,7 +3,7 @@
  * Plugin Name:       SEFICORP
  * Plugin URI:        https://pixelperfectlab.com/
  * Description:       Administrador de documentos SEFICORP
- * Version:           2.0.1
+ * Version:           2.1.0
  * Author:            Gerson Hernández, Alex Gómez
  * License:           GPL v2 or later
  * Text Domain:       seficorp
@@ -307,31 +307,22 @@ function ce_display_documents() {
                     $output .= '<div class="modal-gc" id="' . $id . '">';
                         $output .= '<div class="modal-content-gc">';
                             $output .= '<span class="close-gc">x</span>';
-                            $output .= '<div class="gobierno-corporativo">';
-                                $output .= '<div class="container">';
-                                    $output .= '<div class="row gx-4">';
-                                        foreach ($files as $file) {
-                                            $output .= '<div class="col-12 col-lg-4 mt-5 mb-5">';
-                                                $output .= '<div class="item item-gc">';
-                                                    $output .= '<img class="item-icon" src="' . esc_url($icon) . '" alt="seficorp" />';
-                                                    $output .= '<h2 class="mb-0">' . esc_html($file['name']) . '</h2>';
-                                                    $url  = isset($file['url']) ? $file['url'] : '';
-                                                    $type = isset($file['type']) ? $file['type'] : 'doc';
+                            $output .= '<h2 class="mb-0" style="padding:20px 20px 0 20px;">' . esc_html(get_the_title()) . '</h2>';
+                            $output .= '<div style="padding:20px;">';
+                                foreach ($files as $file) {
+                                    $url  = isset($file['url']) ? $file['url'] : '';
+                                    $type = isset($file['type']) ? $file['type'] : 'doc';
 
-                                                    $href   = ($url !== '' && $url[0] === '#') ? esc_attr($url) : esc_url($url);
-                                                    $target = ($type === 'doc') ? ' target="_blank"' : '';
+                                    $href   = ($url !== '' && $url[0] === '#') ? esc_attr($url) : esc_url($url);
+                                    $target = ($type === 'doc') ? ' target="_blank"' : '';
 
-                                                    $output .= '<a href="' . $href . '" class="item-link justify-content-end"' . $target . '>';
-                                                        $output .= '<div class="item-open">';
-                                                            $output .= '<span>Abrir</span>';
-                                                            $output .= '<img src="https://sacseficorp.com/wp-content/uploads/2025/09/PDFARCHIVO.png" alt="seficorp" />';
-                                                        $output .= '</div>';
-                                                    $output .= '</a>';
-                                                $output .= '</div>';
-                                            $output .= '</div>';
-                                        }
+                                    $output .= '<div style="display:flex; align-items:center; padding:12px 0; border-bottom:1px solid #eee;">';
+                                        $output .= '<img src="https://sacseficorp.com/wp-content/uploads/2025/09/PDFARCHIVO.png" alt="pdf" style="width:24px; height:24px; margin-right:12px; flex-shrink:0;" />';
+                                        $output .= '<a href="' . $href . '"' . $target . ' style="flex:1; text-decoration:none; color:#333; font-weight:500;">';
+                                            $output .= esc_html($file['name']);
+                                        $output .= '</a>';
                                     $output .= '</div>';
-                                $output .= '</div>';
+                                }
                             $output .= '</div>';
                         $output .= '</div>';
                     $output .= '</div>';
