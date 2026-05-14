@@ -44,7 +44,7 @@ function pp_calc_render_shortcode($atts = array(), $content = null) {
         <p>Utiliza nuestra calculadora para conocer una estimación de nuestros productos</p>
         <form class="pp-loan-form" onsubmit="return false;">
           <label>Monto del prestamo ($)</label>
-          <input type="number" data-field="amount" placeholder="Ej. 10000" min="1" />
+          <input type="text" inputmode="numeric" data-field="amount" placeholder="Ej. 10,000" />
           <small>Numero valido</small>
 
           <label>Tasa de interes anual (%)</label>
@@ -52,7 +52,7 @@ function pp_calc_render_shortcode($atts = array(), $content = null) {
           <small>Numero valido</small>
 
           <label>Plazo (meses)</label>
-          <input type="number" data-field="months" placeholder="Ej. 36" min="1" />
+          <input type="text" inputmode="numeric" data-field="months" placeholder="Ej. 36" />
           <small>Numero valido</small>
 
           <button type="button" data-action="calculate" class="pp-calc-calculate-btn">Calcular</button>
